@@ -10,17 +10,17 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-@Table(name = "TB_FoodItem")
+@Table(name = "BT_UserStatus")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TB_FoodItem {
+public class BT_UserStatus {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "code", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long code;
 
 
     @NotBlank(message = "title  is required but not provided")
@@ -29,9 +29,6 @@ public class TB_FoodItem {
     @Column(name = "title", nullable = false)
     private String title;
 
-
-    @Column(name = "itemType", nullable = false)
-    private Long itemType;
 
 
     @Column(name = "description")
