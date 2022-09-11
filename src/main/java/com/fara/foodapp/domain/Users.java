@@ -51,8 +51,10 @@ public class Users {
     @Column(name = "lastName", nullable = false)
     private String lastName;
 
-    @Column(name = "status")
-    private Long status;
+    @NotNull(message = "status must be not null")
+    @ManyToOne()
+    @JoinColumn(name = "status-code",nullable = false)
+    private UserStatus status;
 
     @Column(name = "createDate")
     private Timestamp createDate;
