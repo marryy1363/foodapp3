@@ -10,13 +10,14 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-@Table(name = "BT_UserStatus")
+@Table(name = "BT_ExecutionState")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BT_UserStatus {
+public class ExecutionState {
+
     @Id
     @Column(name = "code", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,8 +30,4 @@ public class BT_UserStatus {
     @Column(name = "title", nullable = false)
     private String title;
 
-
-
-    @Column(name = "description")
-    private String description;
 }

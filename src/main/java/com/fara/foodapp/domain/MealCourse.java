@@ -6,10 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Table(name = "TB_MealCourse")
@@ -18,7 +14,7 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TB_MealCourse {
+public class MealCourse {
 
     @Id
     @Column(name = "id", nullable = false)

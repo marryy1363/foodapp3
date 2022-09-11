@@ -9,19 +9,21 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
+import java.util.Date;
 
-@Table(name = "BT_ExecutionState")
+@Table(name = "TB_WeeklyMenu")
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BT_ExecutionState {
+public class WeeklyMenu {
 
     @Id
-    @Column(name = "code", nullable = false)
+    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long code;
+    private Long id;
 
 
     @NotBlank(message = "title  is required but not provided")
@@ -30,4 +32,24 @@ public class BT_ExecutionState {
     @Column(name = "title", nullable = false)
     private String title;
 
+
+    @Column(name = "createDate", nullable = false)
+    private Timestamp createDate;
+
+
+    @Column(name = "createdBy", nullable = false)
+    private Long createdBy;
+
+    @Column(name = "createdBy")
+    private Date startDate;
+
+
+    @Column(name = "toDate")
+    private Date toDate;
+
+    @Column(name = "planState")
+    private Long planState;
+
+    @Column(name = "executionState")
+    private Long executionState;
 }

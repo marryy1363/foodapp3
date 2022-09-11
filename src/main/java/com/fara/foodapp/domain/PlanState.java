@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BT_PlanState {
+public class PlanState {
     @Id
     @Column(name = "code", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
