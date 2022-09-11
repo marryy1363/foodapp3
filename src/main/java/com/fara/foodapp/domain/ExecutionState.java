@@ -19,9 +19,9 @@ import javax.validation.constraints.NotNull;
 public class ExecutionState {
 
     @Id
-    @Column(name = "code", nullable = false)
+    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long code;
+    private Long id;
 
 
     @NotBlank(message = "title  is required but not provided")

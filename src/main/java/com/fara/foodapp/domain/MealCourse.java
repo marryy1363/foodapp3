@@ -24,12 +24,12 @@ public class MealCourse {
 
     @NotNull(message = "foodItem must be not null")
     @ManyToOne()
-    @JoinColumn(name = "foodItem-id",nullable = false)
+    @JoinColumn(name = "foodItem_id",nullable = false)
     private FoodItem foodItem;
 
     @NotNull(message = "supplier must be not null")
     @ManyToOne()
-    @JoinColumn(name = "supplier-id",nullable = false)
+    @JoinColumn(name = "supplier_id",nullable = false)
     private Supplier supplier;
 
 

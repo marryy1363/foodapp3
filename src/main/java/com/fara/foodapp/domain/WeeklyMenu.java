@@ -39,7 +39,7 @@ public class WeeklyMenu {
 
     @NotNull(message = "createdBy must be not null")
     @ManyToOne()
-    @JoinColumn(name = "createdBy-id",nullable = false)
+    @JoinColumn(name = "createdBy_id",nullable = false)
     private Users createdBy;
 
     @Column(name = "createdBy")
@@ -52,12 +52,12 @@ public class WeeklyMenu {
 
     @NotNull(message = "planState must be not null")
     @ManyToOne()
-    @JoinColumn(name = "planState-code",nullable = false)
+    @JoinColumn(name = "planState_id",nullable = false)
     private PlanState planState;
 
     @NotNull(message = "executionState must be not null")
     @ManyToOne()
-    @JoinColumn(name = "executionState-code",nullable = false)
+    @JoinColumn(name = "executionState_id",nullable = false)
     private ExecutionState executionState;
 
 
