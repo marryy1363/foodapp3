@@ -31,7 +31,7 @@ public class FoodItem {
 
     @NotNull(message = "itemType must be not null")
     @ManyToOne()
-    @JoinColumn(name = "itemType_id",nullable = false)
+    @JoinColumn(name = "itemType_code",nullable = false)
     private FoodItemType itemType;
 
 

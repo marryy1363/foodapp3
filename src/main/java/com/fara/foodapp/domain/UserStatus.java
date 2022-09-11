@@ -18,9 +18,9 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class UserStatus {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "code", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long code;
 
 
     @NotBlank(message = "title  is required but not provided")

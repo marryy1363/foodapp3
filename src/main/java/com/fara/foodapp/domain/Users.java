@@ -53,7 +53,7 @@ public class Users {
 
     @NotNull(message = "status must be not null")
     @ManyToOne()
-    @JoinColumn(name = "status_id",nullable = false)
+    @JoinColumn(name = "status_code",nullable = false)
     private UserStatus status;
 
     @Column(name = "createDate")
