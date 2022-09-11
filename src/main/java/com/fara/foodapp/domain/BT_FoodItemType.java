@@ -25,9 +25,6 @@ public class BT_FoodItemType {
     private Long code;
 
 
-    @NotBlank(message = "title  is required but not provided")
-    @NotEmpty(message = "title is required but not provided")
-    @NotNull(message = "title  is required but not provided")
-    @Column(name = "title", nullable = false)
+    @Column(name = "title")
     private String title;
 }
