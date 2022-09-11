@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Table(name = "TB_MealCourse")
@@ -21,11 +22,15 @@ public class MealCourse {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "foodItem", nullable = false)
-    private Long foodItem;
+    @NotNull(message = "foodItem must be not null")
+    @ManyToOne()
+    @JoinColumn(name = "foodItem-id",nullable = false)
+    private FoodItem foodItem;
 
-    @Column(name = "supplier", nullable = false)
-    private Long supplier;
+    @NotNull(message = "supplier must be not null")
+    @ManyToOne()
+    @JoinColumn(name = "supplier-id",nullable = false)
+    private Supplier supplier;
 
 
     @Column(name = "price", nullable = false)
