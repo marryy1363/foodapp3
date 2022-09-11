@@ -37,8 +37,10 @@ public class WeeklyMenu {
     private Timestamp createDate;
 
 
-    @Column(name = "createdBy", nullable = false)
-    private Long createdBy;
+    @NotNull(message = "createdBy must be not null")
+    @ManyToOne()
+    @JoinColumn(name = "createdBy-id",nullable = false)
+    private Users createdBy;
 
     @Column(name = "createdBy")
     private Date startDate;
@@ -47,9 +49,17 @@ public class WeeklyMenu {
     @Column(name = "toDate")
     private Date toDate;
 
-    @Column(name = "planState")
-    private Long planState;
 
-    @Column(name = "executionState")
-    private Long executionState;
+    @NotNull(message = "planState must be not null")
+    @ManyToOne()
+    @JoinColumn(name = "planState-code",nullable = false)
+    private PlanState planState;
+
+    @NotNull(message = "executionState must be not null")
+    @ManyToOne()
+    @JoinColumn(name = "executionState-code",nullable = false)
+    private ExecutionState executionState;
+
+
+
 }
