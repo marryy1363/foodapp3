@@ -29,9 +29,10 @@ public class FoodItem {
     @Column(name = "title", nullable = false)
     private String title;
 
-
-    @Column(name = "itemType", nullable = false)
-    private Long itemType;
+    @NotNull(message = "itemType must be not null")
+    @ManyToOne()
+    @JoinColumn(name = "itemType-code",nullable = false)
+    private FoodItemType itemType;
 
 
     @Column(name = "description")
