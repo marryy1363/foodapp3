@@ -30,7 +30,7 @@ public class FoodItem {
     private String title;
 
     @NotNull(message = "itemType must be not null")
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "itemType_code",nullable = false)
     private FoodItemType itemType;
 
