@@ -9,7 +9,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/food-app/Meal-course")
+@RequestMapping("/food-app/meal-course")
 @RequiredArgsConstructor
 public class MealCourseController {
 
