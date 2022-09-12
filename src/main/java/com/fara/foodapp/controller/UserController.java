@@ -3,7 +3,7 @@ package com.fara.foodapp.controller;
 import com.fara.foodapp.domain.Users;
 import com.fara.foodapp.service.api.UsersApi;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.parameters.P;
+//import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserController {
 
-    private UsersApi usersApi;
+    private final UsersApi usersApi;
 
 
     @GetMapping("/all")
@@ -37,7 +37,7 @@ public class UserController {
 
     }
 
-    @PostMapping("/Edit")
+    @PostMapping("/edit")
     void Edit(@RequestBody @Valid Users users) throws Exception {
         usersApi.edit(users);
 

@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class UsersImpl implements UsersApi {
-    UsersRepository usersRepository;
+    final UsersRepository usersRepository;
     @Override
     public List<Users> findAllUsers() {
         return usersRepository.findAll();
