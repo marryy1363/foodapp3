@@ -49,9 +49,7 @@ public class CustomAuthorizationFilter extends OncePerRequestFilter {
                     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
                             new UsernamePasswordAuthenticationToken(username, null, authorities);
                     SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-                    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-                    Users principal1 = (Users) principal;
-                    principal1.getId();
+
 
                     filterChain.doFilter(request, response);
 
