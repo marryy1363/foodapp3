@@ -16,6 +16,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
@@ -35,11 +36,27 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
-        String username=request.getParameter("userId");
-        String password=request.getParameter("pwd");
-        log.info("username is {}",username);log.info("pass is {}",password);
-        UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(username,password);
-        return authenticationManager.authenticate(authenticationToken);
+
+        try {
+            BufferedReader reader = request.getReader();
+            StringBuilder sb = new StringBuilder();
+            String line = reader.readLine();
+            while (line != null) {
+                sb.append(line + "\n");
+                line = reader.readLine();
+            }
+            reader.close();
+            String username = sb.substring(16,22);
+            String password = sb.substring(36,45);
+
+
+            log.info("username is {}",username);log.info("pass is {}",password);
+            UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(username,password);
+            return authenticationManager.authenticate(authenticationToken);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override
