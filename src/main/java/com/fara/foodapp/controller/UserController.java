@@ -32,7 +32,7 @@ public class UserController {
 
 
     @PostMapping("/save")
-    Users save(@RequestBody @Valid Users users){
+    Users save(@RequestBody @Valid Users users) throws Exception {
         return usersApi.save(users);
 
     }

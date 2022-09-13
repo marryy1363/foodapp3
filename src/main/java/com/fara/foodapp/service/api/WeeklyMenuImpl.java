@@ -11,7 +11,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static com.fara.foodapp.service.api.Utils.DateUtils.dateOf;
 
 @Service
 @RequiredArgsConstructor

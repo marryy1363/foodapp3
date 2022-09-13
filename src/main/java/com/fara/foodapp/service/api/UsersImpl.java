@@ -10,10 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -46,18 +43,35 @@ public class UsersImpl implements UsersApi, UserDetailsService {
     }
 
     @Override
-    public Users save(Users users) {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
-        String encPass = bCryptPasswordEncoder.encode(users.getPwd());
-        users.setPwd(encPass);
-
+    public Users save(Users users) throws Exception {
+        checkPwdAndUserIdAndSetPassword(users);
         return usersRepository.save(users);
+
+    }
+
+    private void checkPwdAndUserIdAndSetPassword(Users users) throws Exception {
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
+        String pwd = users.getPwd();
+        String encPass = bCryptPasswordEncoder.encode(pwd);
+        if (pwd != null && !pwd.isEmpty() && !pwd.isBlank()) {
+            if (pwd.length() < 3)
+                throw new Exception(" short password ");
+        }
+
+        String userId = users.getUserId();
+        if (usersRepository.existsUsersByUserId(userId))
+            throw new Exception(" duplicate user name");
+
+        users.setPwd(encPass);
     }
 
     @Override
     public Users edit(Users users) throws Exception {
-        if (usersRepository.findById(users.getId()).isPresent())
+        if (usersRepository.existsUsersByUserId(users.getUserId())){
+            checkPwdAndUserIdAndSetPassword(users);
             return usersRepository.save(users);
+        }
+
         else
             throw new Exception("id not found");
 

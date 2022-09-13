@@ -11,7 +11,7 @@ public interface UsersApi {
 
     Users findById(Long id) throws Exception;
 
-    Users save(Users users);
+    Users save(Users users) throws Exception;
 
     Users edit(Users users) throws Exception;
 
