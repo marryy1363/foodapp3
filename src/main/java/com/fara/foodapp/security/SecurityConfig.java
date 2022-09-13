@@ -44,8 +44,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(STATELESS);
         http.authorizeRequests().antMatchers("/food-app/login/**").permitAll();
-        http.authorizeRequests().antMatchers("/food-app/food-item/**").authenticated();
-//        http.authorizeRequests().anyRequest().authenticated();
+        http.authorizeRequests().antMatchers("/food-app/food-item/**","/food-app/meal-course/**"
+                ,"/food-app/users/**","/food-app/weekly-menu/**").authenticated();
+
         http.addFilter(customAuthenticationFilter);
         http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
     }

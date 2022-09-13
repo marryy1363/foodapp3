@@ -27,7 +27,7 @@ public class UsersImpl implements UsersApi, UserDetailsService {
             throw new UsernameNotFoundException("This usernamee is not available");
         }
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
-            authorities.add(new SimpleGrantedAuthority( "USER"));
+//            authorities.add(new SimpleGrantedAuthority( "USER"));
         return new org.springframework.security.core.userdetails.User(user.getUserId(), user.getPwd(), authorities);
     }
     @Override
