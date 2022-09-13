@@ -30,7 +30,7 @@ public class WeeklyMenuController {
 
 
     @PostMapping("/save")
-    WeeklyMenu save(@RequestBody @Valid WeeklyMenu weeklyMenu){
+    WeeklyMenu save(@RequestBody @Valid WeeklyMenu weeklyMenu) throws Exception {
         return weeklyMenuApi.save(weeklyMenu);
 
     }

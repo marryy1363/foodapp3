@@ -11,7 +11,7 @@ public interface WeeklyMenuApi {
 
     WeeklyMenu findById(Long id) throws Exception;
 
-    WeeklyMenu save(WeeklyMenu weeklyMenu);
+    WeeklyMenu save(WeeklyMenu weeklyMenu) throws Exception;
 
     WeeklyMenu edit(WeeklyMenu weeklyMenu) throws Exception;
 

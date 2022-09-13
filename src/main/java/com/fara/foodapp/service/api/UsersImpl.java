@@ -49,9 +49,8 @@ public class UsersImpl implements UsersApi, UserDetailsService {
     public Users save(Users users) {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
         String encPass = bCryptPasswordEncoder.encode(users.getPwd());
-        users.setPwd(
-                encPass
-        );
+        users.setPwd(encPass);
+
         return usersRepository.save(users);
     }
 
