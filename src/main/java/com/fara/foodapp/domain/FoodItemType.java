@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Table(name = "BT_FoodItemType")
+@Table(name = "BT_Fooditemtype")
 @Entity
 @Getter
 @Setter
