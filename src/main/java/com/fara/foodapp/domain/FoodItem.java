@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-@Table(name = "TB_FoodItem")
+@Table(name = "TB_Fooditem")
 @Entity
 @Getter
 @Setter
@@ -31,7 +31,7 @@ public class FoodItem {
 
     @NotNull(message = "itemType must be not null")
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "itemType_code",nullable = false)
+    @JoinColumn(name = "itemtype",nullable = false)
     private FoodItemType itemType;
 
 

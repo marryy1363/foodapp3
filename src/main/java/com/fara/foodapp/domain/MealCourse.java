@@ -9,7 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-@Table(name = "TB_MealCourse")
+@Table(name = "TB_Mealcourse")
 @Entity
 @Getter
 @Setter
@@ -24,23 +24,23 @@ public class MealCourse {
 
     @NotNull(message = "foodItem must be not null")
     @ManyToOne()
-    @JoinColumn(name = "foodItem_id",nullable = false)
+    @JoinColumn(name = "fooditem",nullable = false)
     private FoodItem foodItem;
 
     @NotNull(message = "supplier must be not null")
     @ManyToOne()
-    @JoinColumn(name = "supplier_id",nullable = false)
+    @JoinColumn(name = "supplier",nullable = false)
     private Supplier supplier;
 
 
     @Column(name = "price", nullable = false)
     private Double price;
 
-    @Column(name = "validFromDate", nullable = false)
+    @Column(name = "validfromdate", nullable = false)
     private Date validFromDate;
 
 
-    @Column(name = "validToDate", nullable = false)
+    @Column(name = "validtodate", nullable = false)
     private Date validToDate;
 
 

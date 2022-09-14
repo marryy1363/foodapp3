@@ -28,7 +28,7 @@ public class Users {
     @NotBlank(message = "userId  is required but not provided")
     @NotEmpty(message = "userId is required but not provided")
     @NotNull(message = "userId  is required but not provided")
-    @Column(name = "userId", nullable = false)
+    @Column(name = "userid", nullable = false)
     private String userId;
 
 
@@ -42,24 +42,24 @@ public class Users {
     @NotBlank(message = "firstName  is required but not provided")
     @NotEmpty(message = "firstName is required but not provided")
     @NotNull(message = "firstName  is required but not provided")
-    @Column(name = "firstName", nullable = false)
+    @Column(name = "firstname", nullable = false)
     private String firstName;
 
 
     @NotBlank(message = "lastName  is required but not provided")
     @NotEmpty(message = "lastName is required but not provided")
     @NotNull(message = "lastName  is required but not provided")
-    @Column(name = "lastName", nullable = false)
+    @Column(name = "lastname", nullable = false)
     private String lastName;
 
     @NotNull(message = "status must be not null")
     @ManyToOne()
-    @JoinColumn(name = "status_code",nullable = false)
+    @JoinColumn(name = "status",nullable = false)
     private UserStatus status;
 
-    @Column(name = "createDate")
+    @Column(name = "createdate")
     private Timestamp createDate;
 
-    @Column(name = "modifyDate")
+    @Column(name = "modifydate")
     private Timestamp modifyDate;
 }

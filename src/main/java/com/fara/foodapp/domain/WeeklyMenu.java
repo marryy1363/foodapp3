@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 import java.util.Date;
 
-@Table(name = "TB_WeeklyMenu")
+@Table(name = "TB_Weeklymenu")
 @Entity
 @Getter
 @Setter
@@ -33,31 +33,31 @@ public class WeeklyMenu {
     private String title;
 
 
-    @Column(name = "createDate", nullable = false)
+    @Column(name = "createdate", nullable = false)
     private Timestamp createDate;
 
 
     @NotNull(message = "createdBy must be not null")
     @ManyToOne()
-    @JoinColumn(name = "createdBy_id",nullable = false)
+    @JoinColumn(name = "createdby",nullable = false)
     private Users createdBy;
 
-    @Column(name = "startDate")
+    @Column(name = "startdate")
     private Date startDate;
 
 
-    @Column(name = "toDate")
+    @Column(name = "todate")
     private Date toDate;
 
 
     @NotNull(message = "planState must be not null")
     @ManyToOne()
-    @JoinColumn(name = "planState_code",nullable = false)
+    @JoinColumn(name = "planstate",nullable = false)
     private PlanState planState;
 
     @NotNull(message = "executionState must be not null")
     @ManyToOne()
-    @JoinColumn(name = "executionState_code",nullable = false)
+    @JoinColumn(name = "executionstate",nullable = false)
     private ExecutionState executionState;
 
 

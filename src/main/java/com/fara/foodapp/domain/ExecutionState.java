@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-@Table(name = "BT_ExecutionState")
+@Table(name = "BT_Executionstate")
 @Entity
 @Getter
 @Setter

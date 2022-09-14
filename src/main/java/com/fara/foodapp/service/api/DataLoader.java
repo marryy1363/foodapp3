@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 //@Order(1)
 @RequiredArgsConstructor
 public class DataLoader implements CommandLineRunner {

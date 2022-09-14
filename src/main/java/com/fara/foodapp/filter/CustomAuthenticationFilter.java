@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.util.StreamUtils;
 
@@ -56,7 +57,9 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 //            Users creds = new ObjectMapper().readValue(jsonRequest.get("body"), Users.class);
             String userId = jsonRequest.get("userId");
             String pwd = jsonRequest.get("pwd");
-//
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
+            String encPass = bCryptPasswordEncoder.encode(pwd);
+
 //            String username = creds.getUserId();
 //            String password  = creds.getPwd();
 
