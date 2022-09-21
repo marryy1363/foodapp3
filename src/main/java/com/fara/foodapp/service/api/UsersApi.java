@@ -16,4 +16,6 @@ public interface UsersApi {
     Users edit(Users users) throws Exception;
 
     void delete(Long id) throws Exception;
+
+    Users findByUserId(String userId);
 }

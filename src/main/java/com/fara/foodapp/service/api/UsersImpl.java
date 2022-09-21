@@ -85,4 +85,9 @@ public class UsersImpl implements UsersApi, UserDetailsService {
         else
             throw new Exception("id not found");
     }
+
+    @Override
+    public Users findByUserId(String userId) {
+        return usersRepository.findByUserId(userId);
+    }
 }
